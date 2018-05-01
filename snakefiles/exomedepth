@@ -1,0 +1,12 @@
+rule exomedepth:
+    input:
+        #bam = "{workbatch}/assembly/{sample}.realigned.bam" 
+        bam = "{workbatch}/assembly/{sample}.fixmate.rmdup.bam",
+    output:
+        "{workbatch}/variants/{sample}_exomedepth.csv"
+    log:
+        "{workbatch}/logs/{sample}.exomedepth.log"
+    run:     
+            library = config["samples"][wildcards.sample][3]
+            gender = config["samples"][wildcards.sample][2]
+            shell("echo 'No CNVs detected'>{output};nohup {rscript} {workbatch}/snakefiles/exome_depth_{library}_{gender}.r {workbatch} {wildcards.sample} >{log} 2>&1")

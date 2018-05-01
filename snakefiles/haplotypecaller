@@ -1,0 +1,12 @@
+rule haplotypecaller:
+    input:
+
+    output:
+        vcf=temp("{workbatch}/variants/{sample}_unfiltered.vcf"),
+        index=temp("{workbatch}/variants/{sample}_unfiltered.vcf.idx")
+    log:
+        "{workbatch}/logs/{sample}.log"
+    run:
+        library = config["samples"][wildcards.sample][3]
+        panel = config["samples"][wildcards.sample][4]
+        shell("{java} -Xmx4g -jar")

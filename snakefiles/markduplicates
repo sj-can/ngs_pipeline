@@ -1,0 +1,10 @@
+rule markduplicates:
+    input:
+        "{workbatch}/assembly/{sample}.fixmate.bam"
+    output:
+        bam="{workbatch}/assembly/{sample}.fixmate.rmdup.bam",
+        dup="{workbatch}/metrics/duplicates/{sample}.dupmetrics"
+    log:
+        "{workbatch}/logs/{sample}.log"
+    shell:
+        "{java} -Xmx4g -jar {picard} MarkDuplicates I={input} O={output.bam} TMP_DIR={tempfolder} METRICS_FILE={output.dup} REMOVE_DUPLICATES=TRUE CREATE_INDEX=TRUE VALIDATION_STRINGENCY=SILENT 2>>{log}" 

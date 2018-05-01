@@ -1,0 +1,9 @@
+rule fixmate:
+    input:
+        "{workbatch}/assembly/{sample}.converted.bam"
+    output:
+        "{workbatch}/assembly/{sample}.fixmate.bam"
+    log:
+        "{workbatch}/logs/{sample}.log"
+    shell:
+        "{java} -Xmx4g -jar {picard} FixMateInformation I={input} O={output} TMP_DIR={tempfolder} CREATE_INDEX=TRUE SORT_ORDER=coordinate VALIDATION_STRINGENCY=SILENT 2>>{log}"

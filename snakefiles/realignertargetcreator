@@ -1,0 +1,9 @@
+rule realignertargetcreator:
+    input:
+        "{workbatch}/assembly/{sample}.fixmate.rmdup.bam"
+    output:
+        "{workbatch}/assembly/realignment/intervals/{sample}.intervals"
+    log:
+        "{workbatch}/logs/{sample}.log"
+    shell:
+        "{java} -Xmx6g -jar {gatk} -T RealignerTargetCreator --known {known_indels} -R {fa} -I {input} -o {output} 2>>{log}"

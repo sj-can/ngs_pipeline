@@ -1,0 +1,9 @@
+rule samtobam:
+    input:
+        "{workbatch}/assembly/{sample}.sam"
+    output:
+        "{workbatch}/assembly/{sample}.converted.bam"
+    log:
+        "{workbatch}/logs/{sample}.log"
+    shell:
+        "{java} -Xmx4g -jar {picard} SamFormatConverter I={input} O={output} VALIDATION_STRINGENCY=SILENT 2>>{log}"

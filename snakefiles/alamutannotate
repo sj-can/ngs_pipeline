@@ -1,0 +1,18 @@
+rule alamutannotate:
+    input:
+        vcf="{workbatch}/variants/{sample}_finalfiltered.vcf",
+        index="{workbatch}/variants/{sample}_finalfiltered.vcf.idx"
+    output:
+        ann="{workbatch}/variants/{sample}_annotated.txt",
+        unann="{workbatch}/variants/{sample}_unannotated.txt"
+    log:
+        "{workbatch}/logs/{sample}.log"
+    run:
+        shell("{alamut} --in {input.vcf} --ann {output.ann} --unann {output.unann} --alltrans \
+        --ssIntronicRange 2 --outputVCFInfo AC AF AN DP FS MQ MQ0 QD --outputVCFGenotypeData AD DP GQ GT PL --outputVCFQuality --outputVCFFilter 2>>{log}")
+
+        #hgmduser = config["hgmduser"]
+        #hgmdpass = config["hgmdpass"]
+        #shell("{alamut} --hgmdUser {hgmduser} --hgmdPasswd {hgmdpass} --in {input.vcf} --ann {output.ann} --unann {output.unann} --alltrans \
+        #--ssIntronicRange 2 --outputVCFInfo AC AF AN DP FS MQ MQ0 QD --outputVCFGenotypeData AD DP GQ GT PL --outputVCFQuality --outputVCFFilter 2>>{log}")
+

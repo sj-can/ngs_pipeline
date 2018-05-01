@@ -1,0 +1,10 @@
+rule indelrealigner:
+    input:
+        bam="{workbatch}/assembly/{sample}.fixmate.rmdup.bam",
+        intervals="{workbatch}/assembly/realignment/intervals/{sample}.intervals"
+    output:
+        "{workbatch}/assembly/{sample}.realigned.bam"
+    log:
+        "{workbatch}/logs/{sample}.log"
+    shell:
+        "{java} -Xmx6g -jar {gatk} -T IndelRealigner -known {known_indels} -R {fa} -I {input.bam} -targetIntervals {input.intervals} -o {output} 2>>{log}"

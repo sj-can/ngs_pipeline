@@ -1,0 +1,11 @@
+rule filtervariants:
+    input:
+
+        index="{workbatch}/variants/{sample}_unfiltered.vcf.idx"
+    output:
+
+        index=temp("{workbatch}/variants/{sample}_filtered.vcf.idx")
+    log:
+        "{workbatch}/logs/{sample}.log"
+    shell:
+        

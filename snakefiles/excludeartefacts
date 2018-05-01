@@ -1,0 +1,13 @@
+rule excludeartefacts:
+    input:
+        vcf="{workbatch}/variants/{sample}_shortfiltered.vcf",
+        index="{workbatch}/variants/{sample}_shortfiltered.vcf.idx",
+        artefacts=config["artefacts"]
+    output:
+        vcf=temp("{workbatch}/variants/{sample}_finalfiltered.vcf"),
+        index=temp("{workbatch}/variants/{sample}_finalfiltered.vcf.idx")
+    log:
+        "{workbatch}/logs/{sample}.log"
+    shell: 
+        "{java} -Xmx4g -jar {gatk} -T SelectVariants -R {fa} -o {output.vcf} --variant {input.vcf} --discordance {input.artefacts} \
+         -U LENIENT_VCF_PROCESSING 2>>{log}"
