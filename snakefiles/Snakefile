@@ -2,7 +2,6 @@ from os.path import join
 
 configfile: "config.yaml"
 
-include: "./bwamem"
 include: "./samtobam"
 include: "./fixmate"
 include: "./markduplicates"
@@ -16,7 +15,6 @@ include: "./excludeartefacts"
 include: "./alamutannotate"
 
 fa = config["reference_genome"]
-bwa = config["bwa"]
 java = config["java"]
 picard = config["picard"]
 workbatch = config["workbatch"]
