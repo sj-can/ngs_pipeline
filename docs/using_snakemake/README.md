@@ -49,7 +49,7 @@ We also need to comment out the others so they are not run simultaneously.
 
 Now we need to make sure the **bwamem** rule file is available to use.
 
-Add the outputs specified below to the correct sections:
+Add the outputs specified below to the correct sections:  
     "workbatch}/asembly/{sample}.sam"
     1
     "@RG\tID:{sample}\tSM:{sample}"
