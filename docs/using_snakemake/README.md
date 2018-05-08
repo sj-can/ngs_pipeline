@@ -51,17 +51,11 @@ Now we need to make sure the **bwamem** rule file is available to use.
 
 Add the outputs specified below to the correct sections:  
     "workbatch}/asembly/{sample}.sam"  
-
     1  
-
     "@RG\tID:{sample}\tSM:{sample}"  
-
     "{workbatch}/logs/{sample}.log"  
-
     forward = config["samples"][wildcards.sample][0],  
-
     reverse = config["samples"][wildcards.sample][1]  
-
     shell("{bwa} mem -M -t {threads} {fa} -R '{params}' {workbatch}/rawdata/{forward} {workbatch}/rawdata/{reverse} > {output} 2>{log})  
 
 start the snakemake pipeline  
