@@ -1,25 +1,25 @@
-## Introduction 
+# Introduction 
 
-### Useful documentation and definitions
+## Useful documentation and definitions
 
 Below are links to the documentation for the software used in this workshop as well as useful definitions.  
 
-#### Documentation and useful definitions
+### Documentation and useful definitions
 [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
 
 _Tool Documentation_  
-[Burrows-Wheeler Aligner (BWA)](http://bio-bwa.sourceforge.net/bwa.shtml "BWA manual page")
-[Alamut batch](http://www.interactive-biosoftware.com/doc/alamut-batch/Alamut-Batch-1.5.0-User-Manual.pdf "Alamut Batch manual page)
-[Samtools](http://www.htslib.org/doc/samtools.html Samtools manual page)
-[Picard]
-[Genome Analysis Toolkit (GATK)]()
-exomedepth
-snakemake
+[Burrows-Wheeler Aligner (BWA)](http://bio-bwa.sourceforge.net/bwa.shtml "BWA manual page")  
+[Alamut batch](http://www.interactive-biosoftware.com/doc/alamut-batch/Alamut-Batch-1.5.0-User-Manual.pdf "Alamut Batch manual")  
+[Samtools](http://www.htslib.org/doc/samtools.html "Samtools manual")  
+[Picard](https://broadinstitute.github.io/picard/command-line-overview.html "Picard manual")  
+[Genome Analysis Toolkit (GATK)]()  
+[ExomeDepth](https://academic.oup.com/bib/article/16/3/380/245577 "ExomeDepth paper") 
+[Snakemake](http://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html "Snakemake tutorial")  
+  
+_Useful Documentation_
+[ACMG variant classification guidelines](http://www.acgs.uk.com/media/1092626/uk_practice_guidelines_for_variant_classification_2017.pdf "Variant classifaction guidelines")
 
-Useful Documentation
-ACMG variant interpretation guidelines https://www.acmg.net/docs/standards_guidelines_for_the_interpretation_of_sequence_variants.pdf
-
-Useful definitions
+_Useful definitions_
 SAM/BAM format - https://samtools.github.io/hts-specs/SAMv1.pdf
 VCF format - https://samtools.github.io/hts-specs/VCFv4.2.pdf 
 FASTA format - http://zhanglab.ccmb.med.umich.edu/FASTA/
