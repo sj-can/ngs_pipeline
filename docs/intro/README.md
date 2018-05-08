@@ -2,15 +2,17 @@
 
 ### Useful documentation and definitions
 
-Below are links to the documentation for the software used in this workshop as well as useful definitions.
+Below are links to the documentation for the software used in this workshop as well as useful definitions.  
 
-Documentation and useful definitions
-Tool Documentation
-BWA - http://bio-bwa.sourceforge.net/bwa.shtml
-Alamut batch - 
-samtools
-picard
-gatk
+#### Documentation and useful definitions
+[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+
+_Tool Documentation_  
+[Burrows-Wheeler Aligner (BWA)](http://bio-bwa.sourceforge.net/bwa.shtml "BWA manual page")
+[Alamut batch](http://www.interactive-biosoftware.com/doc/alamut-batch/Alamut-Batch-1.5.0-User-Manual.pdf "Alamut Batch manual page)
+[Samtools](http://www.htslib.org/doc/samtools.html Samtools manual page)
+[Picard]
+[Genome Analysis Toolkit (GATK)]()
 exomedepth
 snakemake
 
