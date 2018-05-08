@@ -119,5 +119,5 @@ Go to the gatk haplotyper rule file to decide on the inputs and outputs.
 Now complete the empty shell command following the format previously specified but replacing variables with any we have previously defined or as they exist on the system. 
 The first one is done for you. 
 
-So now we've got the command we want to run we need to tell snakemake that we want it to run it. So back to the snake file. Make sure we remember the output file we want:
+So now we've got the command we want to run we need to tell snakemake that we want it to run it. So back to the snake file. Make sure we remember the output file we want:  
     expand("{workbatch}/variants/{sample}_unfiltered.vcf", workbatch=workbatch, sample=samples)
