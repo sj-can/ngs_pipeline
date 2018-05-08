@@ -5,7 +5,6 @@
 Below are links to the documentation for the software used in this workshop as well as useful definitions.  
 
 ### Documentation and useful definitions
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
 
 _Tool Documentation_  
 [Burrows-Wheeler Aligner (BWA)](http://bio-bwa.sourceforge.net/bwa.shtml "BWA manual page")  
@@ -26,15 +25,14 @@ _Useful definitions_
 [FASTQ format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1 "FASTQ format")  
 [Read groups](http://gatkforums.broadinstitute.org/gatk/discussion/6472/read-groups "Read Groups")  
 [BED format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1 "BED format")  
-[Interval file formats](http://www.broadinstitute.org/gatk/guide/article?id=1319 "Interval File formats")  
+[Interval file formats](http://www.broadinstitute.org/gatk/guide/article?id=1319 "Interval File formats")
  
 ### Getting started
 
-The following convention applies to these docs:
-
-anything between < > such as </path/to/file> indicates you need to alter the information between the two <> symbols as part of a command.  
-You do not need to include the <> in the final command.
-
+**Remember:  
+..*For this course, information between [] such as [/path/to/file] needs to be altered for the command to work. 
+Do not need to include the [] symbols if they both previously surrounded a command line argument which needs altering.
+  
 When learning it is beneficial to type the commands rather than copy and paste them as this is more likely to help you learn. 
 
 #### Exploring the directories and files
