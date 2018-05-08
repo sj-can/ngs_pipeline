@@ -95,6 +95,9 @@ To do this you need to decide where to specify all of the required paths within 
 8. Run with nohup snakemake 2>&1 &
 
 **MEGAHINTS**  
+
+Open up the config file  
+
 Is java in there?  
 Is gatk in there? 
 
@@ -120,4 +123,5 @@ Now complete the empty shell command following the format previously specified b
 The first one is done for you. 
 
 So now we've got the command we want to run we need to tell snakemake that we want it to run it. So back to the snake file. Make sure we remember the output file we want:  
-    expand("{workbatch}/variants/{sample}_unfiltered.vcf", workbatch=workbatch, sample=samples)
+
+     expand("{workbatch}/variants/{sample}_unfiltered.vcf", workbatch=workbatch, sample=samples)

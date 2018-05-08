@@ -1,43 +1,42 @@
 # Filtering variants
 
-Add in the next step of the pipeline to filtering the vairants
+### Add in the next step of the pipeline to filter the vairants called by HaplotypeCaller
 
 study the command here and find the correct paths:  
-    [path/to/java] -Xmx4g -jar [path/to/gatk] -T VariantFiltration -R [path/to/reference] --filterExpression 'QD < 2.0' --filterName 'QD2' --filterExpression 'MQ < 40.0' \
-     --filterName 'MQ40' --filterExpression 'ReadPosRankSum < -8.0' --filterName 'RPRS-8' --filterExpression 'FS > 60.0' --filterName 'FS60' \
-     --filterExpression 'MQRankSum < -12.5' --filterName 'MQRankSum-12.5' -o [/path/to/output] --variant [/path/to/input] 2>>{log}"
 
-You will need to decide where put all of the required paths into the correct files to make it work.
+    [path/to/java] -Xmx4g -jar [path/to/gatk] -T VariantFiltration -R [path/to/reference] --filterExpression 'QD < 2.0' --filterName 'QD2' --filterExpression 'MQ < 40.0' --filterName 'MQ40' 
 
-check all of the paths you may want to include are in the config file (input and output go into the rule files)
+    --filterExpression 'ReadPosRankSum < -8.0' --filterName 'RPRS-8' --filterExpression 'FS > 60.0' --filterName 'FS60'
+    
+    --filterExpression 'MQRankSum < -12.5' --filterName 'MQRankSum-12.5' -o [/path/to/output] --variant [/path/to/input] 2>>{log}"
 
-Now look at the Snakefile and include the "filtervariants" file to the snakefile
+### You will need to decide which files require which pathas to make it work.
 
-Now go to the filtervariants rule file
-Add the outputs of the last command as the inputs of this one
-Add the path to the output file
-Edit the shell command following the format specified above but replaceing paths with the variables you have specified. Put everythng between the empty quotations. 
-Use single quotations for anything requiring quotations in between the double quotations.
-
-Now edit the expansion rule in the Snakefile using the output file you have decided on.
-
+  * Check all of the paths you may want to include are in the config file (input and output go into the rule files)
+  * Now look at the Snakefile and include the "filtervariants" file
+  * Now go to the filtervariants rule file
+  * Add the outputs of the last command as the inputs of this one
+  * Add the path to the output file
+  * Edit the shell command following the format specified above but replacing paths with the variables you have specified. Put everythng between the empty quotations. 
+  * Use single quotations for anything requiring quotations in between the double quotations.
+  * Finally, edit the expansion rule in the Snakefile using the output file you have decided on.
 
 # Generating quality Metrics (FASTQC)
-The time has come, you've made it this far so now its time to add in a whole rule from scratch. We are going to download in FastQC, a program to generate quality metrics from fastq files and make it work as part of our pipeline.  
+The time has come, you've made it this far so now its time to add in a whole rule from scratch. We are going to download in FastQC, a program used to generate quality metrics from fastq files, and make it work as part of our pipeline.  
 
-Go to the [FASTQC website](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+  * Go to the [FASTQC website](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+  * Click on download now  
 
-Click on download now  
-take note that there are usually some dependencies to be met (java and picard in this case)  
+Take note that there are usually some dependencies to be met (java and picard in this case)  
 There are also usually [installation instructions](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/INSTALL.txt)
 
-Right click on the FastQC v0.11.5 (Win/Linuz Zip file) and select 'copy link address'
+  * Right click on the FastQC v0.11.5 (Win/Linuz Zip file) and select 'copy link address'
 
-Now move to your 'software' directory
+  * Now move to your 'software' directory
 
     cd /home/ec2-user/software
 
-Download the FastQC with the command wget.
+  * Download the FastQC with the command wget.
 
     wget [insert link to fastqc download]
 
