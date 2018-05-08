@@ -36,15 +36,15 @@ _Useful definitions_
 
 #### Exploring the directories and files
 
-To start with use the print working directory command to check you are in the location '/home/ec2-user' or equivalent
+To start with, use the print working directory command to check you are in the location '/home/ec2-user' or equivalent:
 
     pwd
 
-If you are not use the below command to change directory
+If you are not, change directories using the below command:
 
     cd /home/ec2-user
 
-Now, get used to exploring the file system and file contents using commands such as:  
+Now take five minutes to get used to the file system and file contents using commands such as:  
 
     ls <path>
 
@@ -61,6 +61,7 @@ To view the contents of a file
     nano <path>
 
 To view and edit the contents of a file.
+**_Remember:_** Do not use nano on large files as it will use up all the memory and freeze your machine.  
 
 Try to find the location of this file:
 
@@ -71,8 +72,10 @@ You can find out about the gzip program by tying the below to look at it's docum
 
     man gzip
 
-Most linux distribution tools such as less, more, head, tail, nano also have manual pages.
+Most linux distribution tools such as less, more, head, tail, nano also have manual pages.  
 
-Because it is compressed you can use this to view the top four lines after changing to the raw data directory:
+Because it is compressed you can use this to view the top four lines after changing to the raw data directory:  
 
-	$ gzip -cd v501_EX0000001_S17_R1_001.fastq.gz | head -n 4
+    gzip -cd v501_EX0000001_S17_R1_001.fastq.gz | head -n 4
+
+Once complete alert a facilitator and await instruction.
