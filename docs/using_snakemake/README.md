@@ -51,11 +51,17 @@ Now we need to make sure the **bwamem** rule file is available to use.
 
 Add the outputs specified below to the correct sections:  
      "workbatch}/asembly/{sample}.sam"  
+
      1  
+
      "@RG\tID:{sample}\tSM:{sample}"  
+
      "{workbatch}/logs/{sample}.log"  
+
      forward = config["samples"][wildcards.sample][0],  
+
      reverse = config["samples"][wildcards.sample][1]  
+
      shell("{bwa} mem -M -t {threads} {fa} -R '{params}' {workbatch}/rawdata/{forward} {workbatch}/rawdata/{reverse} > {output} 2>{log})  
 
 start the snakemake pipeline  
@@ -68,7 +74,7 @@ Your challenge is to adjust the pipeline code, using steps similar to above, and
 
 Ultimately, You will need to:
 
-1. Study this command and integrate it into the pipeline. 
+Study this command and integrate it into the pipeline.  
 
     [/path/to/java] -Xmx4g -jar [/path/to/gatk] -T HaplotypeCaller -R [/path/to/reference] -rf BadCigar -stand_call_conf 50.0 -stand_emit_conf 30.0 -L [/variant/calling/intervals] -I {input} -o {output.vcf} 2>> path/to/log/file"
 
@@ -88,8 +94,8 @@ To do this you need to decide where to specify all of the required paths within 
 8. If nothing is happening, try changing the Snakefile endpoint i.e. what file do we want to end up with?
 8. Run with nohup snakemake 2>&1 &
 
-**MEGAHINTS**
-Is java in there?
+**MEGAHINTS**  
+Is java in there?  
 Is gatk in there? 
 
 Input and output aren't in here but they're specified in the rule file, so we'll come back to those
@@ -101,16 +107,17 @@ Include the haplotypecaller rule file in the Snakefile
     include: "./haplotypecaller"
 
 Add any config variables to the Snakefile e.g. gatk software
+
     gatk = config["gatk"]
+    
     variant_calling_intervals = config["variant_calling_intervals:"]    
 
-At some point we need to adjust the all rule expand statement to include the cahnges we ahve jsut made as the pipeline endpoint. 
-To do this we need to know what the last output file we want is and we haven't decided on that yet so we'll do that and come back.
+At some point we need to adjust the all rule expand statement to include the changes we have juat made as the pipeline endpoint. 
+To do this we need to know what the last output file we want is and we haven't decided on that yet so we'll do that and come back to the snakefile.
 Go to the gatk haplotyper rule file to decide on the inputs and outputs.
-add in the input (same as the output of the last process)
 
-Now complete the empty shell command following the format specified above but replacing variables with any we have previously defined. 
-The first one is done for you.
+Now complete the empty shell command following the format previously specified but replacing variables with any we have previously defined or as they exist on the system. 
+The first one is done for you. 
 
-So now we've got the command we want to run we need to tell snakemake that we want it to run it. So back to the snake file. make sure we remember the output file we want:
-expand("{workbatch}/variants/{sample}_unfiltered.vcf", workbatch=workbatch, sample=samples)
+So now we've got the command we want to run we need to tell snakemake that we want it to run it. So back to the snake file. Make sure we remember the output file we want:
+    expand("{workbatch}/variants/{sample}_unfiltered.vcf", workbatch=workbatch, sample=samples)
