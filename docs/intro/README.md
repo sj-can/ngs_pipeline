@@ -73,7 +73,6 @@ You can find out about the gzip program by tying the below to look at it's docum
     man gzip
 
 Most linux distribution tools such as less, more, head, tail, nano also have manual pages.  
-
 Because it is compressed you can use this to view the top four lines after changing to the raw data directory:  
 
     gzip -cd v501_EX0000001_S17_R1_001.fastq.gz | head -n 4
