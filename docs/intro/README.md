@@ -30,10 +30,10 @@ _Useful definitions_
 ### Getting started
 
 **Remember:  
-..*For this course, information between [] such as [/path/to/file] needs to be altered for the command to work. 
+  *For this course, information between [] such as [/path/to/file] needs to be altered for the command to work. 
 Do not need to include the [] symbols if they both previously surrounded a command line argument which needs altering.
   
-When learning it is beneficial to type the commands rather than copy and paste them as this is more likely to help you learn. 
+  *When learning it is beneficial to type the commands rather than copy and paste them. 
 
 #### Exploring the directories and files
 
