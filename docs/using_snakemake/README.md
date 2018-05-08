@@ -15,16 +15,22 @@
   * Rules specify the process specific variables required to knit all processes together
   * Seaprate files enable rules to be neatly separated which is useful for readability and troubleshooting
 
+## Getting stuck in
+**Remember**
+  * Inputs need to link to outputs
+  * Endpoints need to be specified in the snakefile rule all
 
-Lets start with the configuration. Open it up to edit it. 
+The following steps need to be comfigured to add a rule to the pipeline. We are going to use the bwa command, which you previously used on the command line as an example. It is already partially completed.  
+
+Lets start with the configuration file. Open it up to edit it. 
 Add in the path to bwa executable (file)
 
-bwa:
-  /home/ec2-user/software/bwa
+    bwa:
+        /home/ec2-user/software/bwa
 
 Now open up the snakefile
 
-We know we need to include a bwamem rule so let us pre-emptively include that here:
+We know we need to include a bwamem rule so let us pre-emptively include that here:  
 
 include: "./bwamem"
 
