@@ -35,7 +35,8 @@ Study the docs for picard tool suite and run a sam-bam conversion on the command
 3. Find the instructions for the SamFormatConverter tool
 4. Considering the command syntax and useage example information you have just read, type the commands into the command line to convert your SAM file into a BAM file
 
-Hint -  
+**Hint** -  
 Think about what files you need and where they might be (you just made one of them and you have to specify the other)  
-MegaHint -  
+You cannot run this command until the previous one has completed  
+**MegaHint** -  
 picard.jar is a type of software  
