@@ -12,21 +12,21 @@ _Tool Documentation_
 [Alamut batch](http://www.interactive-biosoftware.com/doc/alamut-batch/Alamut-Batch-1.5.0-User-Manual.pdf "Alamut Batch manual")  
 [Samtools](http://www.htslib.org/doc/samtools.html "Samtools manual")  
 [Picard](https://broadinstitute.github.io/picard/command-line-overview.html "Picard manual")  
-[Genome Analysis Toolkit (GATK)]()  
+[Genome Analysis Toolkit (GATK)](https://software.broadinstitute.org/gatk/documentation/tooldocs/current/ "GATK doc pages")  
 [ExomeDepth](https://academic.oup.com/bib/article/16/3/380/245577 "ExomeDepth paper") 
 [Snakemake](http://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html "Snakemake tutorial")  
   
-_Useful Documentation_
+_Useful Documentation_  
 [ACMG variant classification guidelines](http://www.acgs.uk.com/media/1092626/uk_practice_guidelines_for_variant_classification_2017.pdf "Variant classifaction guidelines")
 
-_Useful definitions_
-SAM/BAM format - https://samtools.github.io/hts-specs/SAMv1.pdf
-VCF format - https://samtools.github.io/hts-specs/VCFv4.2.pdf 
-FASTA format - http://zhanglab.ccmb.med.umich.edu/FASTA/
-FASTQ format - https://genome.ucsc.edu/FAQ/FAQformat.html#format1
-Read groups - http://gatkforums.broadinstitute.org/gatk/discussion/6472/read-groups
-BED format – https://genome.ucsc.edu/FAQ/FAQformat.html#format1
-Interval files - http://www.broadinstitute.org/gatk/guide/article?id=1319
+_Useful definitions_  
+[SAM/BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf "SAM/BAM format")  
+[VCF format](https://samtools.github.io/hts-specs/VCFv4.2.pdf "Variant call format")  
+[FASTA format](https://zhanglab.ccmb.med.umich.edu/FASTA/ "FASTA format")  
+[FASTQ format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1 "FASTQ format")  
+[Read groups](http://gatkforums.broadinstitute.org/gatk/discussion/6472/read-groups "Read Groups")  
+[BED format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1 "BED format")  
+[Interval file formats](http://www.broadinstitute.org/gatk/guide/article?id=1319 "Interval File formats")  
  
 ### Getting started
 
