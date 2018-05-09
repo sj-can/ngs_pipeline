@@ -20,7 +20,7 @@
   * Inputs need to link to outputs
   * Endpoints need to be specified in the snakefile rule all
 
-The following steps need to be comfigured to add a rule to the pipeline. We are going to use the bwa command, which you previously used on the command line as an example. It is already partially completed.  
+The following steps need to be configured to add a rule to the pipeline. We are going to use the bwa command, which you previously used on the command line as an example. It is already partially completed.  
 
 Lets start with the **configuration file**. Open it up to edit it. 
 Add in the path to bwa executable (file)
@@ -49,7 +49,8 @@ We also need to comment out the others so they are not run simultaneously.
 
 Now we need to make sure the **bwamem** rule file is available to use.
 
-Add the outputs specified below to the correct sections:  
+Add the outputs specified below to the correct sections  
+
      "workbatch}/asembly/{sample}.sam"  
 
      1  
