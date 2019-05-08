@@ -106,5 +106,5 @@ This does the following on each line, respectively
 
 Then a suitable expand rule would be:
 
-    expand("/home/ubuntu/NGS_pipeline/metrics/fastQC/{filename}_fastqc.zip", filename=inFiles)
+    expand("{workbatch}/metrics/fastQC/{filename}_fastqc.zip", filename=inFiles)
 
