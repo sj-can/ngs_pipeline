@@ -42,7 +42,7 @@ To start with, use the print working directory command to check you are in the l
 
 If you are not, change directories using the below command:
 
-    cd /home/ec2-user
+    cd /home/ubuntu
 
 Now take five minutes to get used to the file system and file contents using commands such as:  
 
@@ -56,12 +56,15 @@ To change directory
 
     less <path>
 
-To view the contents of a file
+To view and edit the contents of a file
 
     nano <path>
 
-To view and edit the contents of a file.
-**_Remember:_** Do not use nano on large files as it will use up all the memory and freeze your machine.  
+**_Remember:_** Do not use nano on large files as it will use up all the memory and freeze your machine.
+
+Used the below command to view files and directories three levels deep from your current location
+
+	tree -L 3
 
 Try to find the location of this file:
 

@@ -1,14 +1,10 @@
 rule phenotypecoverage:
     input:
-        #bam="{workbatch}/assembly/{sample}.realigned.bam"
         bam = "{workbatch}/assembly/{sample}.fixmate.rmdup.bam"
     output:
         "{workbatch}/metrics/phenotypecoverage/{sample}_phenotypecoverage"
     run:
-        library = config["samples"][wildcards.sample][3]
-        panel = config["samples"][wildcards.sample][4]
-        #intervals = ("/mnt/data1/resources/intervals/%s/grch-37/%s_%s_metrics.interval_list" % (library,library,panel))
-        intervals = "/home/ec2-user/course_data/resources/intervals/v501_HI_metrics.interval_list"
+        intervals = "/home/ubuntu/course_data/resources/intervals/v501_HI_metrics.interval_list"
         shell("{java} -Xmx4g -jar {gatk} -T DepthOfCoverage -R {fa} -L {intervals} \
          -I {input.bam} -o {output} -mmq 30 -mbq 30 -dels -ct 1 -ct 10 -ct 20 -ct 30 \
          -ct 40 -ct 50 -omitLocusTable")

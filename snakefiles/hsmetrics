@@ -1,11 +1,8 @@
 rule hsmetrics:
     input:
-        #"{workbatch}/assembly/{sample}.realigned.bam"
         "{workbatch}/assembly/{sample}.fixmate.rmdup.bam"
     output:
         "{workbatch}/metrics/hsmetrics/{sample}_hsmetrics"
     run:
-        library = config["samples"][wildcards.sample][3]
-        #intervals = ("/mnt/data1/resources/intervals/%s/grch-37/%s_all_covered_bases.interval_list" % (library,library))
-	intervals = "/home/ec2-user/course_data/resources/intervals/v501_all_covered_bases.interval_list"
+	    intervals = "/home/ubuntu/course_data/resources/intervals/v501_all_covered_bases.interval_list"
         shell("{java} -Xmx4g -jar {picard} CalculateHsMetrics I={input} O={output} R={fa} BAIT_INTERVALS={intervals} TARGET_INTERVALS={intervals}")

@@ -6,7 +6,6 @@ You need to do some [setup](http://snakemake.readthedocs.io/en/stable/tutorial/s
 
 We have taken care of most of it for you but you need to download the actual data files so go to [Section 2](http://snakemake.readthedocs.io/en/stable/tutorial/setup.html#step-2-preparing-a-working-directory) of the setup page and follow the instructions for **this step only**. 
  
-Once you have completed the setup. Move onto the tutorial and follow at your own pace.
-
+Once you have completed the setup, follow the online tutorial at your own pace.
 
 

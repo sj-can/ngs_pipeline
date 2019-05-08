@@ -20,15 +20,18 @@
   * Inputs need to link to outputs
   * Endpoints need to be specified in the snakefile rule all
 
-The following steps need to be configured to add a rule to the pipeline. We are going to use the bwa command, which you previously used on the command line as an example. It is already partially completed.  
+The following steps need to be configured to add a rule to the pipeline. We are going to use the bwa command, which you previously used on the command line as an example. It is already partially completed.
 
-Lets start with the **configuration file**. Open it up to edit it. 
+Lets start with the **configuration file** (config.yaml). Change to it's directory and open it up to edit it.
+
+    cd /home/ubuntu/NGS_pipeline/snakefiles
+
 Add in the path to bwa executable (file)
 
     bwa:
-        /home/ec2-user/software/bwa
+        /home/ubuntu/software/bwa
 
-Now open up the **snakefile**
+Now open up the **Snakefile**
 
 We know we need to include a bwamem rule so let us pre-emptively include that here:  
 

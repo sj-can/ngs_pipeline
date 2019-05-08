@@ -34,7 +34,7 @@ There are also usually [installation instructions](https://www.bioinformatics.ba
 
 Now move to your 'software' directory
 
-    cd /home/ec2-user/software
+    cd /home/ubuntu/software
 
 Download the FastQC with the command wget.
 
@@ -76,13 +76,13 @@ Add the following to this file. Try to consider what each step is doing
 
     rule fastqc:
         input:
-            "/home/ec2-user/NGS_pipeline/rawdata/{file}.fastq.gz"
+            "/home/ubuntu/NGS_pipeline/rawdata/{file}.fastq.gz"
         output:
-            "/home/ec2-user/NGS_pipeline/metrics/fastQC/{file}_fastqc.zip",
+            "/home/ubuntu/NGS_pipeline/metrics/fastQC/{file}_fastqc.zip",
         log:
-            "/home/ec2-user/NGS_pipeline/logs/fastqc.log"
+            "/home/ubuntu/NGS_pipeline/logs/fastqc.log"
         shell:
-            "{fastqc} -o /home/ec2-user/NGS_pipeline/metrics/fastQC/ {input} 2>{log}"
+            "{fastqc} -o /home/ubuntu/NGS_pipeline/metrics/fastQC/ {input} 2>{log}"
 
 This example is actually little different to what we have been doing before. Previously we were doing one operation per sample everytime. 
 For this we need to do two operations for each sample and each can be done independantly of the other.
@@ -93,7 +93,7 @@ To do this we need to gather the paths to each of these files. the following cod
     import glob, ntpath
     
     inFiles = set()
-    inPaths = glob.glob( "/home/ec2-user/ngs_pipeline/rawdata/*.fastq.gz")
+    inPaths = glob.glob( "/home/ubuntu/NGS_pipeline/rawdata/*.fastq.gz")
     for p in inPaths:
         inFiles.add(os.path.basename(p).replace(".fastq.gz", ""))
 
@@ -106,5 +106,5 @@ This does the following on each line, respectively
 
 Then a suitable expand rule would be:
 
-    expand("/home/ec2-user/NGS_pipeline/metrics/fastQC/{filename}_fastqc.zip", filename=inFiles)
+    expand("/home/ubuntu/NGS_pipeline/metrics/fastQC/{filename}_fastqc.zip", filename=inFiles)
 
