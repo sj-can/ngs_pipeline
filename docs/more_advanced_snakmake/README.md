@@ -32,9 +32,9 @@ There are also usually [installation instructions](https://www.bioinformatics.ba
 
   * Right click on the FastQC v0.11.5 (Win/Linuz Zip file) and select 'copy link address'
 
-Now move to your 'software' directory
+Now move to your 'software' directory (don't forget where you are now!)
 
-    cd /home/ubuntu/software
+    cd /home/ubuntu/hpdm098/course_data/software
 
 Download the FastQC with the command wget.
 
@@ -50,7 +50,7 @@ The downloaded file is a zipped file. To unzip it use:
 
 Change the permissions so you can run it:
 
-    chmod 775
+    chmod 775 [name of fastqc executable]
 
 #### Congratulations! 
 
@@ -76,35 +76,39 @@ Add the following to this file. Try to consider what each step is doing
 
     rule fastqc:
         input:
-            "/home/ubuntu/NGS_pipeline/rawdata/{file}.fastq.gz"
+            "/home/ubuntu/hpdm098/workshops/ngs_pipeline/rawdata/{file}.fastq.gz"
         output:
-            "/home/ubuntu/NGS_pipeline/metrics/fastQC/{file}_fastqc.zip",
+            "/home/ubuntu/hpdm098/workshops/ngs_pipeline/metrics/fastQC/{file}_fastqc.zip",
         log:
-            "/home/ubuntu/NGS_pipeline/logs/fastqc.log"
+            "/home/ubuntu/hpdm098/workshops/ngs_pipeline/logs/fastqc.log"
         shell:
-            "{fastqc} -o /home/ubuntu/NGS_pipeline/metrics/fastQC/ {input} 2>{log}"
+            "{fastqc} -o /home/ubuntu/hpdm098/workshops/ngs_pipeline/metrics/fastQC/ {input} 2>{log}"
 
 This example is actually little different to what we have been doing before. Previously we were doing one operation per sample everytime. 
-For this we need to do two operations for each sample and each can be done independantly of the other.
-So, to execute this command most in the most effective manner, we should create an expansion rule that can be applied to every fastq file irrespective of sample ID.
+For this example, we need to do two operations for each sample and each operation can be done independantly of the other.
+So, to execute this command in the most effective manner, we should create an expansion rule that can be applied to every fastq file irrespective of sample ID.
 
-To do this we need to gather the paths to each of these files. the following code does this and shold be palced in the Snakefile
+To do this we need to gather the paths to each of these files. The following code does this and shold be palced in the Snakefile before the "rule all:" statments.
 
     import glob, ntpath
     
     inFiles = set()
-    inPaths = glob.glob( "/home/ubuntu/NGS_pipeline/rawdata/*.fastq.gz")
+    inPaths = glob.glob( "/home/ubuntu/hpdm098/workshops/ngs_pipeline/rawdata/*.fastq.gz")
     for p in inPaths:
         inFiles.add(os.path.basename(p).replace(".fastq.gz", ""))
 
-This does the following on each line, respectively
+Each line of this code does the following, respectively:
   * Sets in python only allow unique entries so we cannot call the program on the same file twice
   * Glob matches everything in this path that ends in "fastq.gz"
   * For loops iterate through all of the inPath matches we have found
-  * We add each one to the set and remove the fastq.gz extension
+  * We add each one to the inFile set variable and remove the fastq.gz extension
 
 
 Then a suitable expand rule would be:
 
     expand("{workbatch}/metrics/fastQC/{filename}_fastqc.zip", filename=inFiles)
+
+This expand statement runs the rule with "{workbatch}/metrics/fastQC/{filename}_fastqc.zip" for every {filename} in the inFiles variable.
+
+
 
