@@ -106,7 +106,7 @@ Each line of this code does the following, respectively:
 
 Then a suitable expand rule would be:
 
-    expand("{workbatch}/metrics/fastQC/{filename}_fastqc.zip", filename=inFiles)
+    expand("{workbatch}/metrics/fastQC/{filename}_fastqc.zip", workbatch=workbatch, filename=inFiles)
 
 This expand statement runs the rule with "{workbatch}/metrics/fastQC/{filename}_fastqc.zip" for every {filename} in the inFiles variable.
 
