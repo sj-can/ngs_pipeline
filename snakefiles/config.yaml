@@ -1,7 +1,7 @@
 reference_genome:
   /home/ubuntu/hpdm098/course_data/resources/reference/human_g1k_v37.fasta
 workbatch:
-  /home/ubuntu/hpdm098/ngs_pipeline
+  /home/ubuntu/hpdm098/workshops/ngs_pipeline
 tempfolder:
   /home/ubuntu/hpdm098/ngs_pipeline/tmp
 java:
