@@ -8,11 +8,3 @@ rule bwamem:
     log:
 
     run:
-
-#[/path/to/bwa] mem -M -t 1 [/path/to/reference] -R "@RG\tID:[sample_name]\tSM[sample_name]" [/path/to/forward-fastq] [/path/to/reverse-fastq] > [path/to/output] &
-#/path/to/bwa = /home/ubuntu/software/bwa/bwa
-#/path/to/reference = /home/ubuntu/course_data/resources/reference/human_g1k_v37.fasta
-#sample_name = sample_1
-#/path/to/forward-fastq = /home/ubuntu/NGS_pipeline/raw_data/v501_EX0000001_S17_R1_001.fastq.gz
-#/path/to/reverse-fastq = /home/ubuntu/NGS_pipeline/raw_data/v501_EX0000001_S17_R2_001.fastq.gz
-#/path/to/output = /home/ubuntu/NGS_pipeline/sample_1.sam
