@@ -24,12 +24,12 @@ The following steps need to be configured to add a rule to the pipeline. We are 
 
 Lets start with the **configuration file** (config.yaml). Change to it's directory and open it up to edit it.
 
-    cd /home/ubuntu/NGS_pipeline/snakefiles
+    cd /home/ubuntu/hpdm098/workshops/ngs_pipeline/snakefiles
 
 Add in the path to bwa executable (file)
 
     bwa:
-        /home/ubuntu/software/bwa
+        /home/ubuntu/hpdm098/course_data/software/bwa
 
 Now open up the **Snakefile**
 
@@ -54,7 +54,7 @@ Now we need to make sure the **bwamem** rule file is available to use.
 
 Add the outputs specified below to the correct sections  
 
-     "workbatch}/asembly/{sample}.sam"  
+     "{workbatch}/asembly/{sample}.sam"  
 
      1  
 

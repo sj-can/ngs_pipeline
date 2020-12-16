@@ -42,7 +42,7 @@ To start with, use the print working directory command to check you are in the l
 
 If you are not, change directories using the below command:
 
-    cd /home/ubuntu
+    cd /home/ubuntu/hpdm098/workshops/ngs_pipeline
 
 Now take five minutes to get used to the file system and file contents using commands such as:  
 

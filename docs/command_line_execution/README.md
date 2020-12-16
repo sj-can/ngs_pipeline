@@ -11,12 +11,12 @@ You need to edit the "detailed command format" on the command line by replacing 
 
 **Variable definitions:**
 
-    [/path/to/bwa] = /home/ubuntu/software/bwa/bwa  
-    [/path/to/reference] = /home/ubuntu/course_data/resources/reference/human_g1k_v37.fasta  
-    [sample_name] = sample_1  
-    [/path/to/forward-fastq] = /home/ubuntu/NGS_pipeline/rawdata/v501_EX0000001_S17_R1_001.fastq.gz  
-    [/path/to/reverse-fastq] = /home/ubuntu/NGS_pipeline/rawdata/v501_EX0000001_S17_R2_001.fastq.gz  
-    [/path/to/output] = /home/ubuntu/NGS_pipeline/sample_1.sam  
+    [/path/to/bwa] = /home/ubuntu/hpdm098/course_data/software/bwa/bwa/bwa
+    [/path/to/reference] = /home/ubuntu/hpdm098/course_data/resources/reference/human_g1k_v37.fasta  
+    [sample_name] = sample_1
+    [/path/to/forward-fastq] = /home/ubuntu/hpdm098/workshops/ngs_pipeline/rawdata/v501_EX0000001_S17_R1_001.fastq.gz  
+    [/path/to/reverse-fastq] = /home/ubuntu/hpdm098/workshops/ngs_pipeline/rawdata/v501_EX0000001_S17_R2_001.fastq.gz  
+    [/path/to/output] = /home/ubuntu/hpdm098/workshops/ngs_pipeline/sample_1.sam  
 
 This may take a few minutes to complete. You can see if the BWA program is still running by typing:
 
