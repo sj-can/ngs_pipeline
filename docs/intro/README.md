@@ -12,7 +12,7 @@ _Tool Documentation_
 [Samtools](http://www.htslib.org/doc/samtools.html "Samtools manual")  
 [Picard](https://broadinstitute.github.io/picard/command-line-overview.html "Picard manual")  
 [Genome Analysis Toolkit (GATK)](https://software.broadinstitute.org/gatk/documentation/tooldocs/current/ "GATK doc pages")  
-[ExomeDepth](https://academic.oup.com/bib/article/16/3/380/245577 "ExomeDepth paper") 
+[ExomeDepth](https://academic.oup.com/bib/article/16/3/380/245577 "ExomeDepth paper")  
 [Snakemake](http://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html "Snakemake tutorial")  
   
 _Useful Documentation_  
