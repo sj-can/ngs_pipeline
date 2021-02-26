@@ -10,7 +10,7 @@ study the command here and find the correct paths:
     
     --filterExpression 'MQRankSum < -12.5' --filterName 'MQRankSum-12.5' -o [/path/to/output] --variant [/path/to/input] 2>>{log}"
 
-### You will need to decide which files require which pathas to make it work.
+### You will need to decide which files to use and add paths to those files to the correct place in the command to make it work.
 
   * Check all of the paths you may want to include are in the config file (input and output go into the rule files)
   * Now look at the Snakefile and include the "filtervariants" file
