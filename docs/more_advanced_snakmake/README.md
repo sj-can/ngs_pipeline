@@ -2,7 +2,7 @@
 
 ### Add in the next step of the pipeline to filter the vairants called by HaplotypeCaller
 
-study the command here and find the correct paths:  
+Study the command here and fill in the paths to the correct files to make it work  
 
     [path/to/java] -Xmx4g -jar [path/to/gatk] -T VariantFiltration -R [path/to/reference] --filterExpression 'QD < 2.0' --filterExpression 'MQ < 40.0' --filterName 'MQ40' 
 
@@ -10,7 +10,7 @@ study the command here and find the correct paths:
     
     --filterExpression 'MQRankSum < -12.5' --filterName 'MQRankSum-12.5' -o [/path/to/output] --variant [/path/to/input] 2>>{log}"
 
-### You will need to decide which files to use and add paths to those files to the correct place in the command to make it work.
+### Hints
 
   * Check all of the paths you may want to include are in the config file (input and output go into the rule files)
   * Now look at the Snakefile and include the "filtervariants" file
@@ -22,7 +22,7 @@ study the command here and find the correct paths:
   * Finally, edit the expansion rule in the Snakefile using the output file you have decided on.
 
 # Generating quality Metrics (FASTQC)
-The time has come, you've made it this far so now its time to add in a whole rule from scratch. We are going to download in FastQC, a program used to generate quality metrics from fastq files, and make it work as part of our pipeline.  
+The time has come, you've made it this far so now its time to add in a whole rule from scratch. We are going to download FastQC, a program used to generate quality metrics from fastq files, and make it work as part of our pipeline.  
 
   * Go to the [FASTQC website](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
   * Click on download now  
