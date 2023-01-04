@@ -4,7 +4,7 @@
 
 Below are links to the documentation for the software used in this workshop as well as useful definitions.  
 
-### Documentation and useful definitions
+## Documentation and useful definitions
 
 _Tool Documentation_  
 [Burrows-Wheeler Aligner (BWA)](http://bio-bwa.sourceforge.net/bwa.shtml "BWA manual page")  
