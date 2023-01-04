@@ -16,17 +16,16 @@ _Tool Documentation_
 [Snakemake](http://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html "Snakemake tutorial")  
   
 _Useful Documentation_  
-[ACMG variant classification guidelines](http://www.acgs.uk.com/media/1092626/uk_practice_guidelines_for_variant_classification_2017.pdf "Variant classifaction guidelines")
+[ACGS variant classification guidelines](https://www.acgs.uk.com/media/11631/uk-practice-guidelines-for-variant-classification-v4-01-2020.pdf "Variant classifaction guidelines")
 
 _Useful definitions_  
 [SAM/BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf "SAM/BAM format")  
 [VCF format](https://samtools.github.io/hts-specs/VCFv4.2.pdf "Variant call format")  
 [FASTA format](https://zhanglab.ccmb.med.umich.edu/FASTA/ "FASTA format")  
 [FASTQ format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1 "FASTQ format")  
-[Read groups](http://gatkforums.broadinstitute.org/gatk/discussion/6472/read-groups "Read Groups")  
+[Read groups](https://gatk.broadinstitute.org/hc/en-us/articles/360035890671-Read-groups "Read Groups")  
 [BED format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1 "BED format")  
-[Interval file formats](http://www.broadinstitute.org/gatk/guide/article?id=1319 "Interval File formats")
- 
+
 ### Getting started
 
 **_Remember:_**
