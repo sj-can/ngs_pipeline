@@ -4,15 +4,12 @@ Snakemake has a lot of functionality so we are going to start with the basics an
 
 You need would normally need to do some [setup](http://snakemake.readthedocs.io/en/stable/tutorial/setup.html "snakemake tutorial setup") before you move onto the [snakemake tutorial](http://snakemake.readthedocs.io/en/stable/tutorial/basics.html) basics.
 
-We have taken care of most of it for you but you need to download the actual data files so go to [Section 2](http://snakemake.readthedocs.io/en/stable/tutorial/setup.html#step-2-preparing-a-working-directory) of the setup page and follow the instructions for steps 2, 3 and 4. 
- 
-We have gnereated this space for you to complete the tutorial and it is reccommended as a minimum that you read it prior to starting the assignment.
+We have taken care of this part and the necessary files are here:
 
-There is a space here for you to complete the tutorial:
+/home/ubuntu/hpdm098/workshops/snakemake_tutorial/snakemake-tutorial-data-5.24.1
 
-    cd /home/ubuntu/hpdm098/workshops/ngs_pipeline/snakemake_tutorial
+Which is also a good space for you to complete the tutorial.
 
-Once you have completed downloaded the data to this location, follow the online tutorial at your own pace.
-
+It is reccommended as a minimum that you read it prior to starting the assignment.
 
 
