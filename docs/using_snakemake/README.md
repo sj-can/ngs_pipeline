@@ -29,7 +29,7 @@ Lets start with the **configuration file** (config.yaml). Change to it's directo
 Add in the path to bwa executable (file)
 
     bwa:
-        /home/ubuntu/hpdm098/course_data/software/bwa
+        /usr/bin/bwa
 
 Now open up the **Snakefile**
 
@@ -58,7 +58,7 @@ Add the outputs specified below to the correct sections
 
      1  
 
-     "@RG\tID:{sample}\tSM:{sample}"  
+     "@RG\\tID:{sample}\\tSM:{sample}"  
 
      "{workbatch}/logs/{sample}.log"  
 
@@ -70,7 +70,9 @@ Add the outputs specified below to the correct sections
 
 start the snakemake pipeline  
 
-    nohup snakemake 2>&1 &
+    nohup snakemake --cores 1 2>&1 &
+
+Then prese enter
 
 ## Variant Calling
 
