@@ -28,7 +28,6 @@ samples=config["samples"]
 rule all:
     input:
         #expand("{workbatch}/variants/{sample}_annotated.txt", workbatch=workbatch, sample=samples),
-        #expand("{workbatch}/variants/{sample}_exomedepth.csv", workbatch=workbatch, sample=samples),
         #expand("{workbatch}/metrics/phenotypecoverage/{sample}_phenotypecoverage", workbatch=workbatch, sample=samples),
         #expand("{workbatch}/metrics/hsmetrics/{sample}_hsmetrics", workbatch=workbatch, sample=samples)
 
