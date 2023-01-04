@@ -4,11 +4,11 @@
 
 Study the command here and fill in the paths to the correct files to make it work  
 
-    [path/to/java] -Xmx4g -jar [path/to/gatk] -T VariantFiltration -R [path/to/reference] --filterExpression 'QD < 2.0' --filterExpression 'MQ < 40.0' --filterName 'MQ40' 
+    [path/to/java] -Xmx4g -jar [path/to/gatk] VariantFiltration -R [path/to/reference] --filter-expression 'QD < 2.0' --filter-name 'QD2' --filter-expression 'MQ < 40.0' --filter-name 'MQ40' 
 
-    --filterExpression 'ReadPosRankSum < -8.0' --filterName 'RPRS-8' --filterExpression 'FS > 60.0' --filterName 'FS60'
+    --filter-expression 'ReadPosRankSum < -8.0' --filter-name 'RPRS-8' --filter-expression 'FS > 60.0' --filter-name 'FS60'
     
-    --filterExpression 'MQRankSum < -12.5' --filterName 'MQRankSum-12.5' -o [/path/to/output] --variant [/path/to/input] 2>>{log}"
+    --filter-expression 'MQRankSum < -12.5' --filter-name 'MQRankSum-12.5' -O [/path/to/output] --variant [/path/to/input] 2>>{log}"
 
 ### Hints
 
@@ -22,41 +22,16 @@ Study the command here and fill in the paths to the correct files to make it wor
   * Finally, edit the expansion rule in the Snakefile using the output file you have decided on.
 
 # Generating quality Metrics (FASTQC)
-The time has come, you've made it this far so now its time to add in a whole rule from scratch. We are going to download FastQC, a program used to generate quality metrics from fastq files, and make it work as part of our pipeline.  
+The time has come, you've made it this far so now its time to add in a whole rule from scratch. We are goint to use FastQC to generate quality metrics from fastq files, and make it work as part of our pipeline.
 
-  * Go to the [FASTQC website](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
-  * Click on download now  
+  * This is the [FASTQC website](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 
-Take note that there are usually some dependencies to be met (java and picard in this case)  
+Take note that there are usually some dependencies to be met (java and picard in this case), but we have done this.
 There are also usually [installation instructions](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/INSTALL.txt)
 
-  * Right click on the FastQC v0.11.5 (Win/Linuz Zip file) and select 'copy link address'
+Dependencies are met but we need to set up the pipeline to use it effectively.
 
-Now move to your 'software' directory (don't forget where you are now!)
-
-    cd /home/ubuntu/hpdm098/course_data/software
-
-Download the FastQC with the command wget.
-
-    wget [insert link to fastqc download]
-
-You type wget and then paste the copied link from the fastQC webstie by right clicking
-
-The downloaded file is a zipped file. To unzip it use:
-
-    unzip [name of zip file]
-
-  * Change into the unzipped folder.
-
-Change the permissions so you can run it:
-
-    chmod 775 [name of fastqc executable]
-
-#### Congratulations! 
-
-You have just downloaded some software. Now we need to set up the pipeline to use it effectively.
-
-  * Add the path to fastqc to the **config** file
+  * Add the path to the fastqc executable to the **config** file
   * Now go to the **Snakefile**
 
 We know we're going to need a fastqc rule so we can include that just like the rest of the rule files. 
@@ -103,12 +78,8 @@ Each line of this code does the following, respectively:
   * For loops iterate through all of the inPath matches we have found
   * We add each one to the inFile set variable and remove the fastq.gz extension
 
-
 Then a suitable expand rule would be:
 
     expand("{workbatch}/metrics/fastQC/{filename}_fastqc.zip", workbatch=workbatch, filename=inFiles)
 
 This expand statement runs the rule with "{workbatch}/metrics/fastQC/{filename}_fastqc.zip" for every {filename} in the inFiles variable.
-
-
-

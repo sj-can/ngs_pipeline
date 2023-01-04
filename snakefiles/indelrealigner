@@ -7,4 +7,4 @@ rule indelrealigner:
     log:
         "{workbatch}/logs/{sample}.log"
     shell:
-        "{java} -Xmx6g -jar {gatk} -T IndelRealigner -known {known_indels} -R {fa} -I {input.bam} -targetIntervals {input.intervals} -o {output} 2>>{log}"
+        "{java} -Xmx6g -jar {gatk}IndelRealigner -known {known_indels} -R {fa} -I {input.bam} -targetIntervals {input.intervals} -O {output} 2>>{log}"

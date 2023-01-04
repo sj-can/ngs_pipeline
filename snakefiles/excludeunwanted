@@ -9,5 +9,5 @@ rule excludeunwanted:
     log:
         "{workbatch}/logs/{sample}.log"
     shell:
-        "{java} -Xmx4g -jar {gatk} -T SelectVariants -R {fa} -o {output.vcf} --variant {input.vcf} --discordance {input.common} \
-         -U LENIENT_VCF_PROCESSING 2>>{log}"
+        "{java} -Xmx4g -jar {gatk} SelectVariants -R {fa} -O {output.vcf} --variant {input.vcf} --discordance {input.common} \
+         --lenient 2>>{log}"

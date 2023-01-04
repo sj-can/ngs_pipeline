@@ -72,7 +72,7 @@ start the snakemake pipeline
 
     nohup snakemake --cores 1 2>&1 &
 
-Then prese enter
+Then press enter
 
 ## Variant Calling
 
@@ -82,7 +82,7 @@ Ultimately, You will need to:
 
 Study this command and integrate it into the pipeline.  
 
-    [/path/to/java] -Xmx4g -jar [/path/to/gatk] -T HaplotypeCaller -R [/path/to/reference] -rf BadCigar -stand_call_conf 50.0 -stand_emit_conf 30.0 -L [/variant/calling/intervals] -I {input} -o {output.vcf} 2>> path/to/log/file"
+    [/path/to/java] -Xmx4g -jar [/path/to/gatk] HaplotypeCaller -R [/path/to/reference] -L [/variant/calling/intervals] -I {input} -O {output.vcf} 2>> path/to/log/file"
 
 To do this you need to decide where to specify all of the required paths within the:
 1. config file
@@ -90,15 +90,14 @@ To do this you need to decide where to specify all of the required paths within 
 3. rule file
 
 **HINTS**:
-1. All of the software you need is in the software directory
-2. There are also other files in the resources directory 
-3. Any variables you add to the config file need to be added to the Snakefile
+1. All of the software and interval files you need is already on the system
+3. Any variables you add to the config file need to be added to the Snakefile as well
 4. The snakefile needs to know which rules to include
 5. The outputs of one rule are the inputs of the next rule
 6. Check the command is correct
 7. Test with snakemake -np
 8. If nothing is happening, try changing the Snakefile endpoint i.e. what file do we want to end up with?
-8. Run with nohup snakemake 2>&1 &
+8. Run with nohup snakemake --cores 2>&1 &
 
 **MEGAHINTS**  
 

@@ -6,4 +6,4 @@ rule realignertargetcreator:
     log:
         "{workbatch}/logs/{sample}.log"
     shell:
-        "{java} -Xmx6g -jar {gatk} -T RealignerTargetCreator --known {known_indels} -R {fa} -I {input} -o {output} 2>>{log}"
+        "{java} -Xmx6g -jar {gatk} RealignerTargetCreator --known {known_indels} -R {fa} -I {input} -O {output} 2>>{log}"
