@@ -82,7 +82,7 @@ Ultimately, You will need to:
 
 Study this command and integrate it into the pipeline.  
 
-    [/path/to/java] -Xmx4g -jar [/path/to/gatk] HaplotypeCaller -R [/path/to/reference] -L [/variant/calling/intervals] -I {input} -O {output.vcf} 2>> path/to/log/file"
+    [/path/to/java] -Xmx4g -jar [/path/to/gatk] -T HaplotypeCaller -R [/path/to/reference] -L [/variant/calling/intervals] -I {input} -o {output.vcf} 2>> path/to/log/file"
 
 To do this you need to decide where to specify all of the required paths within the:
 1. config file

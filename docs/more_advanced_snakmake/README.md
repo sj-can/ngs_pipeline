@@ -4,11 +4,11 @@
 
 Study the command here and fill in the paths to the correct files to make it work  
 
-    [path/to/java] -Xmx4g -jar [path/to/gatk] VariantFiltration -R [path/to/reference] --filter-expression 'QD < 2.0' --filter-name 'QD2' --filter-expression 'MQ < 40.0' --filter-name 'MQ40' 
+    [path/to/java] -Xmx4g -jar [path/to/gatk] -T VariantFiltration -R [path/to/reference] --filterExpression 'QD < 2.0' --filterName 'QD2' --filterExpression 'MQ < 40.0' --filterName 'MQ40' 
 
-    --filter-expression 'ReadPosRankSum < -8.0' --filter-name 'RPRS-8' --filter-expression 'FS > 60.0' --filter-name 'FS60'
+    --filterExpression 'ReadPosRankSum < -8.0' --filterName 'RPRS-8' --filterExpression 'FS > 60.0' --filterName 'FS60'
     
-    --filter-expression 'MQRankSum < -12.5' --filter-name 'MQRankSum-12.5' -O [/path/to/output] --variant [/path/to/input] 2>>{log}"
+    --filterExpression 'MQRankSum < -12.5' --filterName 'MQRankSum-12.5' -o [/path/to/output] --variant [/path/to/input] 2>>{log}"
 
 ### Hints
 
